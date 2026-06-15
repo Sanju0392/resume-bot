@@ -1,4 +1,5 @@
 .env
+.env.example
 config/service_account.json
 logs/
 __pycache__/
