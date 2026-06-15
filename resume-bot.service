@@ -1,0 +1,17 @@
+[Unit]
+Description=Resume Automation Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/resume_bot
+ExecStart=/home/ubuntu/resume_bot/venv/bin/python bot.py
+Restart=always
+RestartSec=10
+StandardOutput=append:/home/ubuntu/resume_bot/logs/bot.log
+StandardError=append:/home/ubuntu/resume_bot/logs/bot.log
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
